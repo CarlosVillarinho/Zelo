@@ -52,6 +52,14 @@ ODS 9: Indústria, Inovação e Infraestrutura.
 
 ODS 11: Cidades e Comunidades Sustentáveis.
 
+🧑🏻‍💻 Desenvolvedores
+
+| RM     | Nome Completo                      |
+|--------|------------------------------------|
+| 557473 | Anna Julia Bobrzyk Gonzales        |
+| 558073 | Carlos Henrique Miranda Villarinho |
+| 558421 | Juliana Tami Kanashiro             |
+
 📸 Telas do Aplicativo
 
 Abaixo estão as capturas de tela demonstrando o fluxo e o design do aplicativo.
