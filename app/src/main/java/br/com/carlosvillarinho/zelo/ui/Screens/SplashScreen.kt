@@ -1,4 +1,4 @@
-package br.com.carlosvillarinho.zelo.ui
+package br.com.carlosvillarinho.zelo.ui.Screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

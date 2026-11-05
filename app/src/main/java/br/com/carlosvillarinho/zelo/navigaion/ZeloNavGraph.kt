@@ -13,12 +13,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import br.com.carlosvillarinho.zelo.model.Onboarding
-import br.com.carlosvillarinho.zelo.ui.DetalheScreen
-import br.com.carlosvillarinho.zelo.ui.FavoritosScreen
-import br.com.carlosvillarinho.zelo.ui.HomeScreen
-import br.com.carlosvillarinho.zelo.ui.NovoRelatoScreen
-import br.com.carlosvillarinho.zelo.ui.OnboardingScreen
-import br.com.carlosvillarinho.zelo.ui.SplashScreen
+import br.com.carlosvillarinho.zelo.ui.Screens.DetalheScreen
+import br.com.carlosvillarinho.zelo.ui.Screens.FavoritosScreen
+import br.com.carlosvillarinho.zelo.ui.Screens.HomeScreen
+import br.com.carlosvillarinho.zelo.ui.Screens.NovoRelatoScreen
+import br.com.carlosvillarinho.zelo.ui.Screens.OnboardingScreen
+import br.com.carlosvillarinho.zelo.ui.Screens.PerfilScreen
+import br.com.carlosvillarinho.zelo.ui.Screens.PrioridadesScreen
+import br.com.carlosvillarinho.zelo.ui.Screens.SplashScreen
 import br.com.carlosvillarinho.zelo.viewmodel.UiState
 import br.com.carlosvillarinho.zelo.viewmodel.ZeloViewModel
 
@@ -29,8 +31,22 @@ fun ZeloNavGraph(
 ) {
     val context = LocalContext.current
     val prefs = remember { Onboarding(context) }
+
     val uiState by viewModel.uiState.collectAsState()
     val favoritos by viewModel.favoritos.collectAsState()
+    val prioridades by viewModel.prioridades.collectAsState()
+    val perfil by viewModel.perfil.collectAsState()
+
+    val onBottomNavigate: (String) -> Unit = { route ->
+        navController.navigate(route) {
+            popUpTo(Screen.Home.route) { saveState = true }
+            launchSingleTop = true
+            restoreState = true
+        }
+    }
+    val abrirDetalhe: (Int) -> Unit = { id ->
+        navController.navigate(Screen.Detalhe.createRoute(id))
+    }
 
     NavHost(navController = navController, startDestination = Screen.Splash.route) {
 
@@ -60,11 +76,39 @@ fun ZeloNavGraph(
         composable(Screen.Home.route) {
             HomeScreen(
                 uiState = uiState,
-                onRelatoClick = { id -> navController.navigate(Screen.Detalhe.createRoute(id)) },
+                onRelatoClick = abrirDetalhe,
                 onFavoriteClick = viewModel::toggleFavorite,
+                onApoiarClick = viewModel::toggleApoio,
                 onRetry = viewModel::loadRelatos,
                 onNovoRelatoClick = { navController.navigate(Screen.NovoRelato.route) },
-                onFavoritosClick = { navController.navigate(Screen.Favoritos.route) }
+                onFavoritosClick = { navController.navigate(Screen.Favoritos.route) },
+                bottomBar = {
+                    ZeloBottomBar(selectedRoute = Screen.Home.route, onNavigate = onBottomNavigate)
+                }
+            )
+        }
+
+        composable(Screen.Prioridades.route) {
+            PrioridadesScreen(
+                prioridades = prioridades,
+                onRelatoClick = abrirDetalhe,
+                onFavoriteClick = viewModel::toggleFavorite,
+                onApoiarClick = viewModel::toggleApoio,
+                bottomBar = {
+                    ZeloBottomBar(selectedRoute = Screen.Prioridades.route, onNavigate = onBottomNavigate)
+                }
+            )
+        }
+
+        composable(Screen.Perfil.route) {
+            PerfilScreen(
+                perfil = perfil,
+                onRelatoClick = abrirDetalhe,
+                onFavoriteClick = viewModel::toggleFavorite,
+                onApoiarClick = viewModel::toggleApoio,
+                bottomBar = {
+                    ZeloBottomBar(selectedRoute = Screen.Perfil.route, onNavigate = onBottomNavigate)
+                }
             )
         }
 
@@ -77,6 +121,7 @@ fun ZeloNavGraph(
             DetalheScreen(
                 relato = relato,
                 onFavoriteClick = viewModel::toggleFavorite,
+                onApoiarClick = viewModel::toggleApoio,
                 onBack = { navController.popBackStack() }
             )
         }
@@ -91,8 +136,9 @@ fun ZeloNavGraph(
         composable(Screen.Favoritos.route) {
             FavoritosScreen(
                 favoritos = favoritos,
-                onRelatoClick = { id -> navController.navigate(Screen.Detalhe.createRoute(id)) },
+                onRelatoClick = abrirDetalhe,
                 onFavoriteClick = viewModel::toggleFavorite,
+                onApoiarClick = viewModel::toggleApoio,
                 onBack = { navController.popBackStack() }
             )
         }

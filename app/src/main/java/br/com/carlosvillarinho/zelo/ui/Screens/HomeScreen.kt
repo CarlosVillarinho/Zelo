@@ -1,14 +1,11 @@
-package br.com.carlosvillarinho.zelo.ui
+package br.com.carlosvillarinho.zelo.ui.Screens
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -16,9 +13,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Button
-import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -31,10 +26,8 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import br.com.carlosvillarinho.zelo.model.Relato
+import br.com.carlosvillarinho.zelo.ui.components.RelatoCard
 import br.com.carlosvillarinho.zelo.viewmodel.UiState
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,9 +36,11 @@ fun HomeScreen(
     uiState: UiState,
     onRelatoClick: (Int) -> Unit,
     onFavoriteClick: (Int) -> Unit,
+    onApoiarClick: (Int) -> Unit,
     onRetry: () -> Unit,
     onNovoRelatoClick: () -> Unit,
-    onFavoritosClick: () -> Unit
+    onFavoritosClick: () -> Unit,
+    bottomBar: @Composable () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -58,6 +53,7 @@ fun HomeScreen(
                 }
             )
         },
+        bottomBar = bottomBar,
         floatingActionButton = {
             FloatingActionButton(onClick = onNovoRelatoClick) {
                 Icon(Icons.Default.Add, contentDescription = "Novo relato")
@@ -84,7 +80,8 @@ fun HomeScreen(
                         RelatoCard(
                             relato = relato,
                             onClick = { onRelatoClick(relato.id) },
-                            onFavoriteClick = { onFavoriteClick(relato.id) }
+                            onFavoriteClick = { onFavoriteClick(relato.id) },
+                            onApoiarClick = { onApoiarClick(relato.id) }
                         )
                     }
                 }
@@ -93,49 +90,6 @@ fun HomeScreen(
                     message = uiState.message,
                     onRetry = onRetry,
                     modifier = Modifier.align(Alignment.Center)
-                )
-            }
-        }
-    }
-}
-
-@Composable
-fun RelatoCard(
-    relato: Relato,
-    onClick: () -> Unit,
-    onFavoriteClick: () -> Unit
-) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onClick)
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = relato.title,
-                    style = MaterialTheme.typography.titleMedium,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
-                )
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    text = relato.body,
-                    style = MaterialTheme.typography.bodyMedium,
-                    maxLines = 3,
-                    overflow = TextOverflow.Ellipsis
-                )
-            }
-            IconButton(onClick = onFavoriteClick) {
-                Icon(
-                    imageVector = if (relato.isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                    contentDescription = if (relato.isFavorite) "Remover dos favoritos" else "Favoritar",
-                    tint = if (relato.isFavorite) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
         }
