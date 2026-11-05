@@ -57,4 +57,25 @@ class ZeloViewModel : ViewModel() {
             }
         }
     }
+
+    fun addRelato(title: String, body: String): Boolean {
+        val titulo = title.trim()
+        val corpo = body.trim()
+        if (titulo.isEmpty() || corpo.isEmpty()) return false
+
+        val atual = _uiState.value as? UiState.Success ?: return false
+        val novo = Relato(
+            id = (atual.relatos.maxOfOrNull { it.id } ?: 0) + 1,
+            title = titulo,
+            body = corpo
+        )
+        _uiState.update { state ->
+            if (state is UiState.Success) {
+                state.copy(relatos = listOf(novo) + state.relatos)
+            } else {
+                state
+            }
+        }
+        return true
+    }
 }

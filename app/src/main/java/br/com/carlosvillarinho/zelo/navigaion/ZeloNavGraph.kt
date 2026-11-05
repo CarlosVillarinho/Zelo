@@ -76,7 +76,10 @@ fun ZeloNavGraph(
         }
 
         composable(Screen.NovoRelato.route) {
-            NovoRelatoScreen(onBack = { navController.popBackStack() })
+            NovoRelatoScreen(
+                onPublicar = viewModel::addRelato,
+                onBack = { navController.popBackStack() }
+            )
         }
 
         composable(Screen.Favoritos.route) {
