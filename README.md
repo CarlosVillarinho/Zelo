@@ -56,29 +56,29 @@ ODS 11: Cidades e Comunidades Sustentáveis.
 
 Abaixo estão as capturas de tela demonstrando o fluxo e o design do aplicativo.
 
-* Splash Screen
-<img width="300" src="https://drive.google.com/file/d/1H3ogC3GzZ_08_9iB4ugvVsHMRLgwK3-E/view?usp=drivesdk" alt="Zelo Splash Screen"/>
+* Splash Screen  
+<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/1.png" alt="Zelo Splash Screen"/>
 
-* Onboarding (Passo 1)
-<img width="300" src="https://drive.google.com/file/d/1qbE-AwFvbFBDr3boPT-hHxKuYu8lXsDL/view?usp=drivesdk" alt="Zelo Onboarding 1"/>
+* Onboarding (Passo 1)  
+<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/2.png" alt="Zelo Onboarding 1"/>
 
-* Onboarding (Passo 2)
-<img width="300" src="https://drive.google.com/file/d/1ypTKOpC6rg4xVMkQ0Wx6Y-iGZV6NzYEb/view?usp=drivesdk" alt="Zelo Onboarding 2"/>
+* Onboarding (Passo 2)  
+<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/3.png" alt="Zelo Onboarding 2"/>
 
-* Onboarding (Passo 3)
-<img width="300" src="https://drive.google.com/file/d/1kh2hc5ZTHcAZt1kS-bY3Ll6-w-neKCBp/view?usp=drivesdk" alt="Zelo Onboarding 3"/>
+* Onboarding (Passo 3)  
+<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/4.png" alt="Zelo Onboarding 3"/>
 
-* Feed de Relatos (Home)
-<img width="300" src="https://drive.google.com/file/d/1MhTAeHZdOTp9ZvS7FTGiQ3EBHDf1wk10/view?usp=drivesdk" alt="Zelo Feed Relatos"/>
+* Feed de Relatos (Home)  
+<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/5.png" alt="Zelo Feed Relatos"/>
 
-* Formulário de Novo Relato
-<img width="300" src="https://drive.google.com/file/d/1UjVcUDb585tURS-7GYvMp_u-_IUXTfl9/view?usp=drivesdk" alt="Zelo Novo Relato"/>
+* Formulário de Novo Relato  
+<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/6.png" alt="Zelo Novo Relato"/>
 
-* Meus Favoritos
-<img width="300" src="https://drive.google.com/file/d/1kBlSu23GaAqd900pLRvXxxsCQ5NXmSzV/view?usp=drivesdk" alt="Zelo Favoritos"/>
+* Meus Favoritos  
+<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/7.png" alt="Zelo Favoritos"/>
 
-* Ranking de Prioridades
-<img width="300" src="https://drive.google.com/file/d/1T-UxOL6UGWO7UaVFhft-_fE44hXS46rR/view?usp=drivesdk" alt="Zelo Prioridades"/>
+* Ranking de Prioridades  
+<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/8.png" alt="Zelo Prioridades"/>
 
-* Perfil do Usuário
-<img width="300" src="https://drive.google.com/file/d/1zh3hmWsBKVncLM7HL7XIuIZrwXyZlxvo/view?usp=drivesdk" alt="Zelo Perfil"/>
+* Perfil do Usuário  
+<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/9.png" alt="Zelo Perfil"/>
