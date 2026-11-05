@@ -56,7 +56,6 @@ ODS 11: Cidades e Comunidades Sustentáveis.
 
 | RM     | Nome Completo                      |
 |--------|------------------------------------|
-| 557473 | Anna Julia Bobrzyk Gonzales        |
 | 558073 | Carlos Henrique Miranda Villarinho |
 | 558421 | Juliana Tami Kanashiro             |
 
