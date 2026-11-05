@@ -57,28 +57,28 @@ ODS 11: Cidades e Comunidades Sustentáveis.
 Abaixo estão as capturas de tela demonstrando o fluxo e o design do aplicativo.
 
 * Splash Screen  
-<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/1.png" alt="Zelo Splash Screen"/>
+<img src="docs/screenshots/splash.png" width="300" alt="Zelo Splash Screen"/>
 
 * Onboarding (Passo 1)  
-<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/2.png" alt="Zelo Onboarding 1"/>
+<img src="docs/screenshots/onboarding1.png" width="300" alt="Zelo Onboarding 1"/>
 
 * Onboarding (Passo 2)  
-<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/3.png" alt="Zelo Onboarding 2"/>
+<img src="docs/screenshots/onboarding2.png" width="300" alt="Zelo Onboarding 2"/>
 
 * Onboarding (Passo 3)  
-<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/4.png" alt="Zelo Onboarding 3"/>
+<img src="docs/screenshots/onboarding3.png" width="300" alt="Zelo Onboarding 3"/>
 
 * Feed de Relatos (Home)  
-<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/5.png" alt="Zelo Feed Relatos"/>
+<img src="docs/screenshots/feed.png" width="300" alt="Zelo Feed Relatos"/>
 
 * Formulário de Novo Relato  
-<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/6.png" alt="Zelo Novo Relato"/>
+<img src="docs/screenshots/novo-relato.png" width="300" alt="Zelo Novo Relato"/>
 
 * Meus Favoritos  
-<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/7.png" alt="Zelo Favoritos"/>
+<img src="docs/screenshots/favoritos.png" width="300" alt="Zelo Favoritos"/>
 
 * Ranking de Prioridades  
-<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/8.png" alt="Zelo Prioridades"/>
+<img src="docs/screenshots/prioridades.png" width="300" alt="Zelo Prioridades"/>
 
 * Perfil do Usuário  
-<img width="300" src="C:/Users/uique/Imagens/Capturas de Tela/9.png" alt="Zelo Perfil"/>
+<img src="docs/screenshots/perfil.png" width="300" alt="Zelo Perfil"/>
