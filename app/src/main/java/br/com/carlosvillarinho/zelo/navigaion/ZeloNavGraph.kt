@@ -19,6 +19,7 @@ import br.com.carlosvillarinho.zelo.ui.HomeScreen
 import br.com.carlosvillarinho.zelo.ui.NovoRelatoScreen
 import br.com.carlosvillarinho.zelo.ui.OnboardingScreen
 import br.com.carlosvillarinho.zelo.ui.SplashScreen
+import br.com.carlosvillarinho.zelo.viewmodel.UiState
 import br.com.carlosvillarinho.zelo.viewmodel.ZeloViewModel
 
 @Composable
@@ -72,7 +73,12 @@ fun ZeloNavGraph(
             arguments = listOf(navArgument(Screen.Detalhe.ARG_ID) { type = NavType.IntType })
         ) { backStackEntry ->
             val id = backStackEntry.arguments?.getInt(Screen.Detalhe.ARG_ID) ?: 0
-            DetalheScreen(relatoId = id, onBack = { navController.popBackStack() })
+            val relato = (uiState as? UiState.Success)?.findById(id)
+            DetalheScreen(
+                relato = relato,
+                onFavoriteClick = viewModel::toggleFavorite,
+                onBack = { navController.popBackStack() }
+            )
         }
 
         composable(Screen.NovoRelato.route) {
